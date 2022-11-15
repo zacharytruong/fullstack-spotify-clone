@@ -39,6 +39,13 @@ module.exports = {
         unnamedComponents: 'arrow-function'
       }
     ],
-    'prettier/prettier': 'warn'
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        parser: 'flow',
+        trailingComma: 'none'
+      }
+    ]
   }
 };
