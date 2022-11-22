@@ -4,9 +4,7 @@ import {
   ListItem,
   ListIcon,
   Divider,
-  // Center,
-  LinkBox,
-  LinkOverlay
+  LinkBox
 } from '@chakra-ui/layout';
 import {
   MdHome,
@@ -69,15 +67,9 @@ const Sidebar = () => {
             {navMenu.map((menu) => (
               <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
                 <LinkBox>
-                  <Link href={menu.route}>
-                    <LinkOverlay>
-                      <ListIcon
-                        as={menu.icon}
-                        color="white"
-                        marginRight="20px"
-                      />
-                      {menu.name}
-                    </LinkOverlay>
+                  <Link passHref href={menu.route}>
+                    <ListIcon as={menu.icon} color="white" marginRight="20px" />
+                    {menu.name}
                   </Link>
                 </LinkBox>
               </ListItem>
@@ -90,14 +82,8 @@ const Sidebar = () => {
               <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
                 <LinkBox>
                   <Link href={menu.route}>
-                    <LinkOverlay>
-                      <ListIcon
-                        as={menu.icon}
-                        color="white"
-                        marginRight="20px"
-                      />
-                      {menu.name}
-                    </LinkOverlay>
+                    <ListIcon as={menu.icon} color="white" marginRight="20px" />
+                    {menu.name}
                   </Link>
                 </LinkBox>
               </ListItem>
@@ -105,13 +91,13 @@ const Sidebar = () => {
           </List>
         </Box>
         <Divider color="gray.800" />
-        <Box height="75%" overflowY="auto" paddingY="20px">
+        <Box height="66%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
             {playlist.map((list) => (
               <ListItem paddingX="20px" key={list}>
                 <LinkBox>
                   <Link href="/" passHref>
-                    <LinkOverlay>{list}</LinkOverlay>
+                    {list}
                   </Link>
                 </LinkBox>
               </ListItem>
