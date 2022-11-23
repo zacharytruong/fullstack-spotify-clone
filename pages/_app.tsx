@@ -31,12 +31,22 @@ const theme = extendTheme({
   }
 });
 
-const App = ({ Component, pageProps }: AppProps) => {
+type AuthProps = AppProps & {
+  Component: {
+    authPage?: boolean
+  }
+};
+
+const App = ({ Component, pageProps }: AuthProps) => {
   return (
     <ChakraProvider theme={theme}>
-      <PlayerLayout>
+      {Component.authPage ? (
         <Component {...pageProps} />
-      </PlayerLayout>
+      ) : (
+        <PlayerLayout>
+          <Component {...pageProps} />
+        </PlayerLayout>
+      )}
     </ChakraProvider>
   );
 };
