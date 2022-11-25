@@ -93,15 +93,17 @@ const Sidebar = () => {
         <Divider color="gray.800" />
         <Box height="66%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
-            {playlists.map((list) => (
-              <ListItem paddingX="20px" key={list.id}>
-                <LinkBox>
-                  <Link href="/" passHref>
-                    {list.name}
-                  </Link>
-                </LinkBox>
-              </ListItem>
-            ))}
+            {playlists &&
+              playlists.length > 1 &&
+              playlists.map((list) => (
+                <ListItem paddingX="20px" key={list.id}>
+                  <LinkBox>
+                    <Link href="/" passHref>
+                      {list.name}
+                    </Link>
+                  </LinkBox>
+                </ListItem>
+              ))}
           </List>
         </Box>
       </Box>
