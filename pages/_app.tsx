@@ -35,8 +35,8 @@ const theme = extendTheme({
 
 type AuthProps = AppProps & {
   Component: {
-    authPage?: boolean;
-  };
+    authPage?: boolean
+  }
 };
 
 const App = ({ Component, pageProps }: AuthProps) => {
